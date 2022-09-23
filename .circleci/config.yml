@@ -1,9 +1,13 @@
 version: 2.1
 
+executors:
+  runner:
+    machine: true
+    resource_class: domparfitt/test
+
 jobs:
   say-hello:
-    docker:
-      - image: cimg/base:stable
+    executor: runner
     steps:
       - checkout
       - run:
